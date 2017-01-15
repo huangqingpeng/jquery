@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				height:3000px;
+			}
+		</style>
+		<script src="jquery-1.11.3.js"></script>
+		<script src="jquery-mousewheel.js"></script>
+	</head>
+	<body>
+		<script>
+			$(document).mousewheel(function(a){
+				if(a.dir=="up"){
+					alert("up");
+				}else{
+					alert("down");
+				}
+			})
+			
+			
+		</script>
+	</body>
+</html>

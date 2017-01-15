@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="base.css" />
+
+	</head>
+
+	<body>
+		<div class="LoutiNav">
+			<ul>
+				<li class="active">
+					<span class="mark1">1F</span>
+					<span class="mark2">服饰</span>
+				</li>
+				<li>
+					<span class="mark1">2F</span>
+					<span class="mark2">美妆</span>
+				</li>
+				<li>
+					<span class="mark1">3F</span>
+					<span class="mark2">手机</span>
+				</li>
+				<li>
+					<span class="mark1">4F</span>
+					<span class="mark2">家电</span>
+				</li>
+				<li>
+					<span class="mark1">5F</span>
+					<span class="mark2">数码</span>
+				</li>
+				<li>
+					<span class="mark1">6F</span>
+					<span class="mark2">运动</span>
+				</li>
+				<li>
+					<span class="mark1">7F</span>
+					<span class="mark2">居家</span>
+				</li>
+				<li>
+					<span class="mark1">8F</span>
+					<span class="mark2">母婴</span>
+				</li>
+				<li>
+					<span class="mark1">9F</span>
+					<span class="mark2">食品</span>
+				</li>
+				<li>
+					<span class="mark1">10F</span>
+					<span class="mark2">图书</span>
+				</li>
+				<li>
+					<span class="mark1">11F</span>
+					<span class="mark2">服务</span>
+				</li>
+				<li class="last">Top</li>
+			</ul>
+		</div>
+
+		<!--楼层内容开始-->
+		<div class="container">
+			<div class="header">
+
+			</div>
+			<div class="main">
+				<div class="Louti Louti1" style="background: #cc0033;">
+					服饰
+				</div>
+				<div class="Louti Louti2" style="background: #999933;">
+					美妆
+				</div>
+				<div class="Louti Louti3" style="background: #ccff33;">
+					手机
+				</div>
+				<div class="Louti Louti4" style="background: #006633;">
+					家电
+				</div>
+				<div class="Louti Louti5" style="background: #6666cc;">
+					数码
+				</div>
+				<div class="Louti Louti6" style="background: #ff6600;">
+					运动
+				</div>
+				<div class="Louti Louti7" style="background: #ffff00;">
+					居家
+				</div>
+				<div class="Louti Louti8" style="background: #3333ff;">
+					母婴
+				</div>
+				<div class="Louti Louti9" style="background: #ff00cc;">
+					食品
+				</div>
+				<div class="Louti Louti10" style="background: #669900;">
+					图书
+				</div>
+				<div class="Louti Louti11" style="background: #ff66cc;">
+					服务
+				</div>
+
+			</div>
+			<div class="footer">
+
+			</div>
+			<!--楼层内容结束-->
+		</div>
+		<script type="text/javascript" src="jquery-1.11.3.js"></script>
+		<script type="text/javascript">
+			//滚动条的滚动事件
+			var flag = true;
+			$(window).scroll(function() {
+					var sTop = $(window).scrollTop(); //滚动条滚动高度  文档被卷去的距离
+					//控制楼梯tab的切换
+					if(sTop >= $(".header").height()) {
+						$(".LoutiNav").fadeIn(500);
+					} else {
+						$(".LoutiNav").fadeOut(500);
+					}
+					if(flag) {
+						$(".Louti").each(function(index, b) {
+							var sheight = $(b).offset().top;
+							if(sTop + $(window).height() / 2 >= sheight) {
+								$(".LoutiNav ul li").eq(index).addClass("active").siblings().removeClass("active");
+							} else {
+								return false; //停止遍历
+							}
+						})
+					}
+				})
+				//楼梯tab的添加点击事件      事件委托方式
+			$(".LoutiNav").on("click", "li:not(.last)", function(e) {
+				flag=false;
+				var index = $(this).index();
+				var sTop = $(".Louti").eq(index).offset().top; //每个Louti的距离文档顶部的高度
+				//$(window).scrollTop(sTop);瞬间回到顶部
+				$("body").animate({scrollTop: sTop}, 500,function(){
+					flag=true;
+				}); //运动回到对应位置
+                $(this).addClass("active").siblings().removeClass("active");//让当前的li有active，其他去除
+			})
+			
+			//回到顶部
+			$(".last").click(function(){
+				$("body").animate({scrollTop: 0}, 100);//让滚动高度为 0
+			})
+		</script>
+	</body>
+
+</html>

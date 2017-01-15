@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button class="btn">提交</button>
+		<div class="div1"></div>
+		<script src="jquery-1.11.3.js"></script>
+		<script>
+		    $(".btn").click(function(){
+		    	$.get("data.txt",{data:1,name:2},function(data){
+					//alert(data)
+					$(".div1").html(data);
+				})
+		    })
+			
+		</script>
+	</body>
+</html>

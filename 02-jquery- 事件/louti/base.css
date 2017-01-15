@@ -1,0 +1,99 @@
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				list-style: none;
+			}
+			.container{
+				margin:0 auto;
+				width:1120px;
+			}
+			.LoutiNav{
+				position: fixed;
+				top:100px;
+				left: 50px;
+				display: none;
+			}
+			.LoutiNav.active{
+				display: block;
+			}
+			.LoutiNav ul li{
+				width: 32px;
+				height: 32px;
+				border:1px solid #ccc;
+				text-align: center;
+				line-height: 32px;
+				cursor: pointer;
+				
+			}
+			.LoutiNav ul li .mark2{
+				display: none;
+			}
+			.LoutiNav ul li.active{
+				background-color: darkred;
+				color: #fff;
+			}
+			.LoutiNav ul li.active .mark1{
+				display: none;
+			}
+			.LoutiNav ul li.active .mark2{
+				display: block;
+			}
+			.LoutiNav ul li:hover{
+				background-color: darkred;
+				color: #fff;
+			}
+			.LoutiNav ul li:hover .mark1{
+				display: none;
+			}
+			.LoutiNav ul li:hover .mark2{
+				display: block;
+			}
+			.LoutiNav ul li+li{
+				border-top:none ;
+			}
+			.LoutiNav ul li.last{
+				background-color: darkred;
+				color: #fff;
+			}
+			/*---------------*/
+			.container .header{
+				width: 100%;
+				height: 1300px;
+				background-color: brown;
+			}
+			.container .Louti{
+				width:100%;
+				height: 2000px;
+				font: bold 38px/38px "微软雅黑";
+				text-align: center;
+			}
+			.container .Louti1{
+				height: 800px;
+			}
+			.container .Louti2{
+				height: 500px;
+			}
+			.container .Louti3{
+				height: 600px;
+			}
+			.container .Louti4{
+				height: 400px;
+			}
+			.container .Louti5{
+				height: 700px;
+			}
+			.container .Louti6{
+				height: 1800px;
+			}
+			.container .Louti7{
+				height: 200px;
+			}
+			.container .footer{
+				width: 100%;
+				height: 400px;
+				background-color: brown;
+			}
+			
+			
