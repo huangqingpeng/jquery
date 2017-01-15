@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="index.css" />
+		<script type="text/javascript" src="jquery-1.11.3.js" ></script>
+	</head>
+	<body>
+		<div class="top-wrap">
+			<div id="top" class="top">
+				<h1>
+					<a href="javascript:;"><img src="img/u3.png"></a>
+				</h1>
+				<dl class="nav">
+					<dt>当前用户：<span>demo</span></dt>
+					<dd>[短消息（0）]</dd>
+					<dd>[退出登录]</dd>
+					<dd>[修改密码]</dd>
+				</dl>
+		   </div>
+		</div>
+		
+		<div id="main" class="main">
+			<div class="main-left">
+				<h2 class="title name">Admin</h2>
+				<div class="nav-box">
+					<h2 class="title"><img src="img/u16.png" /><span>商品类目管理</span></h2>
+					<div class="content family">
+						<!--<p class="type"><img src="img/u28.png">日用百货</p>
+						<ul class="content-ul">
+							<li class="content-list"><img src="img/u28.png">五金器材</li>
+							<li class="content-list"><img src="img/u28.png">厨房清洁</li>
+							<li class="content-list"><img src="img/u28.png">沐浴洗漱</li>
+							<li class="content-list"><img src="img/u28.png">餐具</li>
+						</ul>-->
+					</div>
+					<div class="content">
+						<p class="type"><img src="img/u28.png"><span>休闲娱乐</span></p>
+						<ul class="content-ul">
+							<li class="content-list"><img src="img/u28.png">电影</li>
+							<li class="content-list"><img src="img/u28.png">音乐</li>
+							<li class="content-list"><img src="img/u28.png">话剧</li>
+							<li class="content-list"><img src="img/u28.png">相声</li>
+						</ul>
+					</div>
+				</div>
+				<div class="del-box">
+					<h2 class="title"><img src="img/u16.png" /><span>促销活动</span></h2>
+					<ul class="days">
+						<li class="day-list">双十一</li>
+						<li class="day-list">双十二</li>
+						<li class="day-list">圣诞</li>
+						<li class="day-list">元旦</li>
+						<li class="day-list">三八节</li>
+						<li class="day-list">五一劳动节</li>
+						<li class="day-list">儿童节</li>
+						<li class="day-list">暑期档</li>
+						<li class="day-list">教师节</li>
+					</ul>
+				</div>
+				<div class="word-box">
+					<h2 class="title"><img src="img/u16.png" />数据字典</h2>
+				</div>
+			</div>
+			<div class="main-right">
+				<div class="menu">
+					<h4><img src="img/u50.png"></h4>
+					<dl class="menu-title">
+						<dt>您当前的位置是：</dt>
+						<dd class="from">【<span>商品类管理</span>】--</dd>
+						<dd class="goods">【日用百货】</dd>
+					</dl>
+					<p class="nowDate">
+						<span >2011年10月9日</span>
+						<span >13:53:52</span>
+					</p>
+				</div>
+				<div class="datas">
+					<div class="search-box">
+						<dl>
+							<dt>类别名称:</dt>
+							<dd>
+								<input id="search" type="text" value="">
+							</dd>
+							<dd>
+								<button id="search-bt1">查询</button>
+							</dd>
+							<dd>
+								<button id="search-bt2">新建商品类别</button>
+							</dd>
+						</dl>
+					</div>
+					<div class="goods-infor">
+						<table id="table" border="1" cellspacing="0" cellpadding="0">
+							<thead>
+								<tr>
+									<th >序号</th>
+									<th>商品类别名称</th>
+									<th>类别等级</th>
+									<th>类别描述</th>
+									<th>序号子类别数量</th>
+									<th>关联VCP</th>
+									<th>操作</th>
+								</tr>
+				            </thead>
+							<tbody id="tbody">
+								<!--<tr class="trs">
+									<td>1</td>
+									<td>手机</td>
+									<td>AAA</td>
+									<td>中国</td>
+									<td>6000</td>
+									<td>4</td>
+									<td>
+										<div class="show">
+											<button class="del">删除</button>
+										    <button class="set">修改</button>
+										</div>
+										<div class="hide">
+											 <button class="save">保存</button>
+										     <button class="cancel">cancel</button>
+										</div>
+									</td>
+								</tr>-->
+							</tbody>
+						</table>
+						<div class="page">
+							<dl>
+								<dt>当前第<span> 4 </span>页</dt>
+								<dd class="firstPage">首页</dd>
+								<dd class="prevPage">上一页</dd>
+								<dd class="nextPage">下一页</dd>
+								<dd class="lastPage">末页</dd>
+							</dl>
+						</div>
+						
+					</div>
+					
+					
+				</div>
+				
+				
+				
+				
+				
+			</div>
+		</div>
+		<script type="text/javascript" src="index.js" ></script>
+	</body>
+</html>

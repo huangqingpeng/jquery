@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body,input,ul,dl,ol,li,dd,dt,p,h1,h2,h3,h4,h5,h6{
+				margin: 0;
+				padding: 0
+			}
+			
+			img {
+				border: 0;
+			}
+			a {
+				text-decoration: none;
+			}
+			
+			li {
+				list-style: none;
+			}
+			/*导航*/
+			#nav-wrap{
+				width:100%;
+				height:100px;
+				background:#252525;
+			}
+			#nav-wrap{
+				min-width:1200px;
+			}
+			#nav-box{
+				margin:0 auto;
+				overflow:hidden;
+				width:1200px;
+			}
+			#nav{
+				width:1100px;
+				height:100px;
+			}
+			
+			#nav h1{
+				float:left;
+				margin-left:30px;
+			}
+			#nav ul{
+				float:left;
+				margin-left:40px;
+			}
+			#nav ul li{
+				float:left;
+				height:100px;
+				line-height:100px;
+				padding:0 30px;
+			}
+			#nav ul li a{
+				color:#fff;
+				font-size:20px;
+			}
+			.list1{
+				background:#191919;
+			}
+			/*collect 收藏*/
+			#collect-box{
+				margin:0 auto;
+				width:1200px;
+				overflow: hidden;
+			}
+			#collect {
+				width:1000px ;
+				margin:20px 100px;
+				position:relative;
+			}
+			#collect{
+				min-width:1000px ;
+			}
+			#collect dl{
+				float:left;
+				width:300px;
+			}
+			#collect dl dt{
+				float:left;
+				margin-right: 30px;
+			}
+			#collect dl img{
+				height:100px;
+				width:100px;
+			}
+			#collect dl dd{
+				float:left;
+				margin-bottom:10px;
+				font-size:16px;
+			}
+			.dd-color{
+				color:#f60;
+			}
+			
+			.delcollect{
+				float:right;
+				width:80px;
+				height:30px;
+				text-align: center;
+				line-height: 30px;
+				background:#f60;
+				color:#fff;
+				font-size: 16px;
+				position:relative;
+				right:50px;
+				top:50px;
+				cursor: pointer;
+			}
+		</style>
+		<script src="js/jquery-1.11.3.js"></script>
+		<script src="js/jquery.cookie.js"></script>
+		<script src="js/template.js"></script>
+	</head>
+	<body>
+		<div id="nav-wrap">
+			<!--导航-->
+			<div id="nav-box">
+				<div id="nav">
+					<h1><a href="#"><img src="img/logo.jpg"></a></h1>
+					<ul id="navul">
+						<li><a href="index2.html">首页</a></li>
+						<li><a href="#">分类</a></li>
+						<li><a href="#">歌单</a></li>
+						<li><a href="#">我的收藏</a></li>
+						<li><a href="#">下载客户端</a></li>
+					</ul>
+				</div>
+			</div>	
+		</div>
+		<script type="text/html" id="collect_goods">
+			{{each list as value i }}
+			    <div id="collect-box">
+					<div id="collect">
+						<dl>
+							<dt><img src="{{value.picurl}}"/></dt>
+							<dd>{{value.title}}</dd>
+							<dd class="dd-color">
+								时间:
+								<span>{{value.updatetime}}</span>
+							</dd>
+							<dd class="dd-color">
+								播放：
+							   <span>{{value.playtimes}}</span>
+							</dd>
+							<dd>主播：    {{value.author}}</dd>
+						</dl>
+						<div lang={{value.id}}  class="delcollect">取消收藏</div>
+					</div>
+		        </div>
+		    {{/each}}
+		</script>
+		<div id="container"></div>
+	</body>
+	<script type="text/javascript">
+	   //导航效果
+		var oNavul = document.getElementById("navul");
+		var oList = oNavul.getElementsByTagName("li");
+		for(var j = 0; j < oList.length; j++) {
+			oList[j].className = "";
+			$(oList[j]).children().css({
+				color: "#fff"
+			});
+		}
+		oList[0].className = "list1";
+		$(oList[0]).children().css({
+			color: "#f60"
+		});
+		for(var i = 0; i < oList.length; i++) {
+			oList[i].index = i;
+			oList[i].onmouseover = function() {
+				for(var j = 0; j < oList.length; j++) {
+					oList[j].className = "";
+					$(oList[j]).children().css({
+						color: "#fff"
+					});
+				}
+				this.className = "list1";
+				$(this).children().css({
+					color: "#f60"
+				});
+			}
+		}
+		
+		//收藏与取消
+		 $.ajax({
+//		 	async:false,//同步执行
+	    	url:"js/showData.json"
+		 }).done(function(data){
+		 	var arrData=data;//获取数据
+		 	//var curId=arrData[]
+		 	var str=$.cookie("cart",str);//获取cookie存的ID
+			var arr=JSON.parse(str).list;
+			var arr1=[];
+			 console.log(arr);
+			 console.log(arr[0]);
+			 for(var i=0;i<arr.length;i++){
+			 	console.log(arr[i]);
+			 	console.log(arrData[arr[i]].id);
+			 	if(arrData[arr[i]].id==arr[i]){
+			 		arr1.push(arrData[arr[i]]);
+			 	}
+			 }
+			 console.log(arr1);
+			 var obj={
+			 	list:arr1
+			 }
+			 var html=template("collect_goods",obj);
+		     $("#container").html(html);
+		     
+		     //点击取消收藏，收藏的东西被删除
+		     //1.要删除cookie中存在的商品的id；就把收藏取消了
+		     delCollect();
+		 })
+		 
+		 
+		   //点击取消收藏，收藏的东西被删除
+		  //1.要删除cookie中存在的商品的id；就把收藏取消了
+		 function delCollect(){
+		 	$(".delcollect").click(function(){
+		 		$(this).parent().parent().remove();//删除该条收藏信息
+		 		var str=$.cookie("cart");
+		 		var arr=JSON.parse(str).list;
+		 		//同时删除对应的cookie值
+		 		console.log(arr);
+		 		var curId=$(this).attr("lang");//获取被点击的属性lang的属性值
+		 		console.log(curId);
+		 		for(var i=0;i<arr.length;i++){
+		 			if(curId==arr[i]){
+		 				arr.splice(i,1);//删除相对应cookie中存的该商品的id；
+		 			}
+		 		}
+		 		//同时修改cookie；
+		 		 var obj={
+				 	list:arr
+				 }
+		 		  console.log(arr);
+		 		$.cookie("cart",JSON.stringify(obj),{expries:7,path:"/"});
+		 	})
+		 }
+	</script>
+</html>

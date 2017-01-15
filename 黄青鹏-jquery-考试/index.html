@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script src="js/jquery-1.11.3.js"></script>
+		<script src="js/jquery.cookie.js"></script>
+		
+		<script src="js/template.js"></script>
+	</head>
+	<body>
+		<div id="nav-wrap">
+			<!--导航-->
+			<div id="nav">
+				<h1><a href="#"><img src="img/logo.jpg"></a></h1>
+				<ul id="navul">
+					<li><a href="#">首页</a></li>
+					<li><a href="#">分类</a></li>
+					<li><a href="#">歌单</a></li>
+					<li><a href="#">我的收藏</a></li>
+					<li><a href="#">下载客户端</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="content">
+			<div id="main">
+				<div id="banner">
+					<div id="time">
+						<p><img src="img/tuijian.jpg"></p>
+						<div id="movetime">
+							<div class="time-item">
+								<strong class="hour_show">0</strong>:
+								<strong class="minute_show">0</strong>:
+								<strong class="second_show">0</strong>
+        				   </div>
+						</div>
+					</div>
+					<div id="bannermove">
+						<div class="scroll">
+							<img class="first" src="img/banner/banner1.jpg" />
+							<img src="img/banner/banner2.jpg" />
+							<img src="img/banner/banner3.jpg" />
+							<img src="img/banner/banner4.jpg" />
+				       </div>
+						<!--点击左右按钮播放-->
+						<a href="#" class="prev"></a>
+				        <a href="#" class="next"></a>
+					</div>
+			   </div>
+			   <script type="text/html" id="productslist">
+				   <div id="dy">
+				   	   <h2><a>节目推荐</a><span>/换一批</span></h2>
+				   	   <ul> 
+				   	   	  {{each list as value i}}
+				   	   	   <li class="listimg">
+				   	   	   	   <a><img src="{{value.picurl}}"></a>
+				   	   	   	   <p>{{value.title}}</p>
+				   	   	   	   <p><strong>{{value.sorttype}}</strong><span>{{value.author}}</span></p>
+				   	   	   	   <div class="shidden">收藏</div>
+				   	   	   </li>
+				   	   	   {{/each}}
+				   	   </ul>
+				   </div>
+			   </script>
+			   <div id="cantain"></div>
+		   </div>
+		   <div id="right">
+		   	     <img src="img/main-right.png" />
+		   </div>
+		</div>
+		
+		
+		<script src="js/index.js"></script>
+		<script src="js/jquery-banner.js"></script>
+		<script>
+			$.ajax({
+	    		async:false,//同步执行
+	    		url:"js/show1.json"
+	    	}).done(function(data){//获取的数据成功后的业务逻辑
+	    		var arrData=data; 
+	    		//console.log(arrData);
+	    		console.log(arrData);
+              var html=template("productslist",arrData);	
+              $("#cantain").html(html);
+	    	})
+	    	
+	    	$(".listimg").mouseover(function(){
+              	 $(this).find(".shidden").css("display","block");
+              }).mouseout(function(){
+	    		$(this).find(".shidden").css("display","none");
+	    	  })
+              
+              $(".shidden").click(function(){
+              	//创建cookie
+              	var shoppingCookie=$.cookie(key, value, options);
+              })
+              
+              
+		</script>
+	</body>
+</html>

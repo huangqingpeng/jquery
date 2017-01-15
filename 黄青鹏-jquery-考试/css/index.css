@@ -1,0 +1,259 @@
+body,input,ul,dl,ol,li,dd,dt,p,h1,h2,h3,h4,h5,h6{
+	margin: 0;
+	padding: 0
+}
+
+img {
+	border: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+/*导航*/
+#nav-wrap{
+	width:100%;
+	height:100px;
+	background:#252525;
+}
+#nav-wrap{
+	min-width:1200px;
+}
+#nav-box{
+	margin:0 auto;
+	overflow:hidden;
+	width:1200px;
+}
+#nav{
+	width:1100px;
+	height:100px;
+}
+
+#nav h1{
+	float:left;
+	margin-left:30px;
+}
+#nav ul{
+	float:left;
+	margin-left:40px;
+}
+#nav ul li{
+	float:left;
+	height:100px;
+	line-height:100px;
+	padding:0 30px;
+}
+#nav ul li a{
+	color:#fff;
+	font-size:20px;
+}
+.list1{
+	background:#191919;
+}
+/*content内容*/
+#content{
+	margin:0 auto;
+	width:1200px;
+	overflow: hidden;
+	background: #fff;
+}
+
+#main{
+	padding:20px;
+	margin-left:15px;
+	height:1000px;
+	float:left;
+}
+#banner{
+	padding:10px 0;
+	height:300px;
+}
+#time{
+	width:210px;
+	height:253px;
+	/*background:red;*/
+	float:left;
+	margin-right: 20px;
+	border:1px solid #f0f0f0;
+}
+#time img{
+	width:210px;
+}
+
+/*倒计时*/
+.times{
+	height:30px;
+	width:210px;
+}
+.time-item {
+	float:left;	
+	padding-left: 30px;
+	font-size:14px;
+	color: #666;
+}
+.time-item strong {
+	background:#C71C60;
+	color:#fff;
+	line-height:30px;
+	font-size:14px;
+	font-family:Arial;
+	padding:0 5px;
+	margin-right:5px;
+	border-radius:2px;
+	box-shadow:1px 1px 3px rgba(0,0,0,0.2);
+}
+.item-title .unit {
+	background:none;
+	line-height:49px;
+	font-size:24px;
+	padding:0 10px;
+	float:left;
+}
+.times p{
+	float:right;
+	height:30px;
+	line-height: 30px;
+}
+.times p a{
+	font-size:12px;
+	color:#666;
+}
+/*//轮播*/
+#bannermove{
+	width:670px;
+	height:253px;
+	background:blue;
+	float:left;
+	overflow: hidden;
+	position:relative;
+}
+.scroll {
+		width: 670px;
+		height: 1265px;
+		background: #abcdef;
+		position: absolute;
+		top:0;
+		left:0;
+		overflow: hidden;
+}
+.scroll ul li{
+	position:relative;
+	width: 670px;
+	height: 253px;
+}
+.scroll img {
+	width: 670px;
+	height: 253px;
+	position:absolute;
+}
+
+/*左右点击播放*/
+.prev {
+	position: absolute;
+	left: 0px;
+	top:120px;
+	height:40px;
+	width:30px;
+	background: url(../img/icon.png) -164px 0px;
+}
+.next {
+	position: absolute;
+	right: 0px;
+	top:120px;
+	height:40px;
+	width:30px;
+	background: url(../img/icon.png) -136px -0px;
+	}
+	
+	
+/*//加载json数据获得的*/
+#dy{
+	/*height:300px;*/
+	/*width:900px;*/
+	/*background:red;*/
+}
+ h2{
+	color:#000;
+	font-size:20px;
+	margin-bottom: 30px;
+}
+h2 span{
+	color:#ff6600;
+}
+h2 span:hover{
+	cursor: pointer;
+}
+#dy{
+	width:210px;
+	/*height:800px;*/
+	/*overflow: hidden;*/
+	float:left;
+	margin-right:20px;
+}
+#dy img{
+	width:210px;
+	height:253px;
+}
+#dy ul{
+	width:210px;
+	/*height:350px;*/
+	/*overflow: hidden;*/
+}
+#dy ul li{
+	 float:left;
+	 position:relative;
+	 width:210px;
+	height:350px;
+}
+#dy ul li p{
+	height:30px;
+	line-height: 30px;
+}
+#dy ul li p span{
+	color:#999;
+	display: inline-block;
+}
+#dy ul li p strong{
+	display: block;
+	float:left;
+	margin-right: 10px;
+	color:#fff;
+	font-size:20px;
+	font-weight: bolder;
+	height:30px;
+	width:70px;
+	background:#ff6600;
+	cursor: pointer;
+}
+.shidden{
+	position:absolute;
+	top:5px;
+	right:5px;
+	width:40px;
+	height:60px;
+	color:#ff6600;
+	/*display: none;*/
+	cursor: pointer;
+}
+#cantainer{
+	width:900px;
+	height:350px;
+	overflow: hidden;
+	position:relative;
+}
+#cantain{
+	position:absolute;
+	top:0;
+	left:0;
+	width:960px;
+}
+
+
+
+#right{
+	float:left;
+}

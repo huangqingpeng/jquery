@@ -1,0 +1,340 @@
+body,p,h1,h2,h3,h4,h5,h6,ol,ul,li,div,input,form,button,tr,td,dl,dd,dt,thead,tbody,table{
+	margin:0;
+	padding:0;
+}
+li{
+	list-style:none;
+}
+a{
+	text-decoration: none;
+}
+img{
+	border:0;
+}
+#border0{
+	border: 0;
+}
+.top-wrap{
+	overflow: hidden;
+	background:url(img/u7.jpg) repeat-x;
+	min-width: 1264px;
+}
+.top{
+	width: 1224px;
+	margin:0 auto;
+	padding:0 20px;
+	height:90px;
+}
+.top h1{
+	float:left;
+	height:60px;
+	width:240px;
+	padding-top:15px;
+}
+
+.top h1 img{
+	width:240px;
+	height:38px;
+}
+
+
+.nav{
+	float:right;
+	font-size: 12px;
+	color:#222;
+	margin-top:10px;
+}
+
+.nav dt{
+	float:left;
+	margin-right: 5px;
+}
+.nav dd{
+	float:left;
+	margin-right: 5px;
+}
+.nav dt span{
+	color:yellowgreen;
+}
+
+/*******************************内容区****************************/
+
+.main{
+	width: 1224px;
+	margin:0 auto;
+	padding:0 20px;
+	height:850px;
+	/*background:pink;*/
+}
+.main-left{
+	float:left;
+	width:200px;
+	margin-right: 10px;
+	/*background: bisque;*/
+	height:850px;
+}
+
+.main-left .title.name{
+	width:134px;
+	height:28px;
+	line-height: 28px;
+	background: url(img/u8.gif) no-repeat;
+	font-size: 16px;
+	padding-left: 50px;
+}
+
+.main-left  .title{
+	width:184px;
+	height:28px;
+	line-height: 28px;
+	background: url(img/u10.gif) no-repeat;
+	font-size: 16px;
+	padding-left: 10px;
+	font-weight: 500;
+	cursor: pointer;
+}
+.main-left  .title img{
+	margin-right: 20px;
+}
+.nav-box{
+	width:184px;
+	overflow: hidden;
+}
+
+
+/*********************************商品类目管理************************************/
+.type{
+	width:184px;
+	height:25px;
+	line-height: 25px;
+	font-size: 12px;
+	background: url(img/u6.png) no-repeat;
+	cursor: pointer;
+}
+.type img{
+	margin:0 10px;
+	}
+
+.content-list{
+	height:25px;
+	line-height: 25px;
+	font-size: 12px;
+	background: url(img/u6.png) no-repeat;
+	padding-left:10px ;
+	cursor: pointer;
+}
+.content-list img{
+	margin:0 10px;
+	}
+/*********************************促销活动************************************/
+
+.day-list{
+	width:184px;
+	text-align: center;
+	height:30px;
+	line-height: 30px;
+	font-size: 12px;
+	background: url(img/u6.png) no-repeat;
+}
+
+
+
+
+
+
+/*********************************右侧表格************************************/
+
+.main-right{
+	width:1000px;
+	height:850px;
+	float:left;
+	border:1px solid #c5c5c5;
+	/*background: pink;*/
+}
+
+
+.menu{
+	width:970px;
+	padding:0 10px;
+	height:30px;
+	font-size: 12px;
+	color:#222;
+	background: url(img/u6.png) repeat-x;
+	border:1px solid #c5c5c5;
+}
+.menu h4{
+	width:20px;
+	float:left;
+	margin-right: 20px;
+}
+
+.menu .menu-title{
+	float:left;
+}
+
+.menu .menu-title dt{
+	float:left;
+	height:30px;
+	line-height: 30px;
+}
+
+.menu .menu-title dd{
+	float:left;
+	height:30px;
+	line-height: 30px;
+}
+
+.menu .nowDate{
+	float:right;
+	height:30px;
+	line-height: 30px;
+}
+
+.search-box{
+	width:960px;
+	padding:10px 20px;
+	height:50px;
+	font-size: 12px;
+	color:#222;
+}
+
+.search-box dl dt{
+	float:left;
+	margin-right: 5px;
+	height:20px;
+	line-height: 20px;
+}
+
+.search-box dl dd{
+	float:left;
+	margin-right: 5px;
+}
+
+.search-box dl dd input{
+	outline: none;
+	height:20px;
+	width:220px;
+}
+
+.search-box dl dd button{
+	height:22px;
+	color:blue;
+	outline: none;
+	border: 0;
+	padding:1px 2px ;
+}
+
+/*********************************商品信息************************************/
+
+.goods-infor{
+	width:970px;
+	padding:10px;
+	height:600px;
+	font-size: 14px;
+	color:#222;
+	background: url(img/u6.png) repeat-x;
+	border:1px solid #c5c5c5;
+}
+
+#table{
+	width:970px;
+}
+#tbody{
+	width:970px;
+}
+.trs{
+	width:970px;
+}
+.trs td{
+	height:20px;
+	/*text-align: center;*/
+	width:80px;
+}
+#table tr td input{
+	height:18px;
+	outline: none;
+	width:100%;
+}
+
+.page{
+	width:956px;
+	padding: 5px;
+	height:30px;
+	border:2px solid #666;
+	border-top:0;
+}
+.page dl{
+	margin-left: 300px;
+}
+.page dl dt{
+	float:left;
+	height:20px;
+	line-height: 20px;
+	font-size: 14px;
+    padding: 2px 2px;
+}
+.page dl dt span{
+	color:red;
+	font-size: 16px;
+	font-weight: bold;
+}
+.page dl dd{
+	float:left;
+	height:20px;
+	line-height: 20px;
+	background: #0077bc;
+	padding: 2px 2px;
+	margin-left: 2px;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+
+.show{
+	display: block;
+}
+
+.hide{
+	display: none;
+}
+
+.del{
+	cursor: pointer;
+	color:red;
+}
+.set{
+	cursor: pointer;
+}
+.cancel{
+	cursor: pointer;
+}
+.save{
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
